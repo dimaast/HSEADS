@@ -1,11 +1,52 @@
 :root {
+    /* Colors */
     --white: #ffffff;
-    --ultralightgray: #f4f4f4;
-    --lightgray: #f8f8f8;
-    --middlegray: #d4d4d4;
-    --deepgray: #3C3C3C;
-    --gray: #9f9f9f;
     --black: #141414;
-    --alert: #bf9191;
-    --attention: #8ab69b;
+    --gray10: #F9F9F9;
+    --gray20: #F3F3F3;
+    --gray50: #C2C2C2;
+    --gray60: #AAAAAA;
+
+    /* Fonts */
+    --h1size: 40px;
+    --h1line: 90%;
+    --h1space: -2px;
+
+    --h2size: 28px;
+    --h2line: 90%;
+    --h2space: -0.84px;
+
+    --h3size: 22px;
+    --h3line: 100%;
+    --h3space: -0.66px;
+    
+    --plsize: 32px;
+    --plline: 90%;
+    --plspace: -0.96px;
+    
+    --pmsize: 18px;
+    --pmline: 100%;
+    --pmspace: -0.54px;
+    
+    --pssize: 14px;
+    --psline: 100%;
+    --psspace: -0.42px;
+    
+    --pxssize: 12px;
+    --pxsline: 100%;
+    --pxsspace: -0.36px;
+
+    /* Wrappers */
+    --xxxswrap: 6px;
+    --xxswrap: 8px;
+    --xswrap: 10px;
+    --swrap: 12px;
+    --mwrap: 14px;
+    --lwrap: 18px;
+    --xlwrap: 32px;
+    --xxlwrap: 50px;
+
+    /* Borders */
+    --sradius: 10px;
+    --mradius: 20px;
 }

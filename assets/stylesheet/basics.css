@@ -1,12 +1,26 @@
 body {
     width: 100%;
     font-family: 'Helvetica Neue';
-    font-weight: 500;
-    letter-spacing: -1.3px;
+    font-weight: 400;
     padding: 20px 6% 60px;
     box-sizing: border-box;
     background-color: var(--ultralightgray);
     color: var(--deepgray);
+    letter-spacing: -0.2px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+
+    &#link {
+        background: url(../images/icons/link.svg) no-repeat center / cover;
+    }
+
+    &#clock {
+        background: url(../images/icons/clock.svg) no-repeat center / cover;
+    }
+
 }
 
 header {
@@ -24,20 +38,28 @@ header {
     }
 }
 
+/* Заголовки */
+
 h1 {
     font-size: 11.76vw;
-    letter-spacing: -0.885vw;
+    font-weight: 500;
+    letter-spacing: -1.2vw;
 }
 
 h2 {
     font-size: 80pt;
-    letter-spacing: -0.2vw;
+    font-weight: 500;
     line-height: 100%;
 }
 
 h3 {
     font-size: 22pt;
     font-weight: 400;
+}
+
+p {
+    font-size: 14pt;
+    color: var(--gray);
 }
 
 #header {
@@ -49,13 +71,13 @@ h3 {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    margin: 40px 0px 0px 0px;
 }
 
 .courses {
     font-family: 'Helvetica Neue';
     font-weight: 400;
     font-size: 1.875vw;
-    letter-spacing: -0.06vw;
     background-color: transparent;
     border: none;
     color: var(--gray);
@@ -69,9 +91,18 @@ h3 {
     }
 }
 
+/* Блок карточек */
+
 .linkBigCardsBlock {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0px 40px 0px;
+}
+
+.linkMediumCardsBlock {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 20px;
     margin: 20px 0px 40px 0px;
 }
@@ -83,7 +114,12 @@ h3 {
     margin: 20px 0px 40px 0px;
 }
 
+/* Карточки */
+
 .linkBigCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 280px;
     box-sizing: border-box;
     background-color: var(--white);
@@ -95,11 +131,44 @@ h3 {
 
     h3 {
         font-size: 18pt;
-        font-weight: 400;
+    }
+
+    p {
+        color: var(--middlegray);
+    }
+}
+
+.linkMediumCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    box-sizing: border-box;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--gray);
+    overflow: hidden;
+
+    h3 {
+        font-size: 16pt;
+    }
+
+    p {
+        color: var(--middlegray);
+    }
+
+    .courseType {
+        background: var(--midligthgray);
+        color: var(--middlegray);
     }
 }
 
 .linkSmallCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 120px;
     box-sizing: border-box;
     background-color: var(--white);
@@ -111,8 +180,19 @@ h3 {
 
     h3 {
         font-size: 14pt;
-        font-weight: 400;
     }
+
+    p {
+        color: var(--middlegray);
+    }
+}
+
+.wrapperIconText {
+    display: flex;
+    flex-direction: row;
+    column-gap: 4px;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 img {
@@ -153,6 +233,32 @@ nav {
     color: var(--attention);
 }
 
+.hidden {
+    display: none;
+}
+
+.courseSmallInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.courseType {
+    display: flex;
+    width: fit-content;
+    padding: 6px;
+    border-radius: 6px;
+    background: var(--white);
+    color: var(--gray);
+}
+
+@media screen and (max-width: 1720px) {
+
+    .linkMediumCardsBlock {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
 @media screen and (max-width: 1440px) {
 
     h2 {
@@ -163,8 +269,20 @@ nav {
         grid-template-columns: 1fr 1fr;
     }
 
+    .linkMediumCardsBlock {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
     .linkSmallCardsBlock {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+
+    .linkMediumCardsBlock {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -181,4 +299,25 @@ nav {
     .linkSmallCardsBlock {
         grid-template-columns: 1fr 1fr;
     }
+}
+
+@media screen and (max-width: 600px) {
+
+    .linkMediumCardsBlock {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wrappedHorizontal {
+    display: flex;
+    flex-direction: row;
+    column-gap: 4px;
+    align-items: center;
+}
+
+.wrappedCalloutInfo {
+    display: flex;
+    flex-direction: row;
+    column-gap: 18px;
+    justify-content: center;
 }

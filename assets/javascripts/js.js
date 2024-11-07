@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var button = Object.values(document.querySelectorAll('.courses'));
+    let button = Object.values(document.querySelectorAll('.courses'));
+    let allCourseCourses = Object.values(document.querySelectorAll('.courseAll'))
+    let firstCourseCourses = Object.values(document.querySelectorAll('.course1st'));
+    let secondCourseCourses = Object.values(document.querySelectorAll('.course2nd'));
+    let thirdCourseCourses = Object.values(document.querySelectorAll('.course3rd'));
+    let fourthCourseCourses = Object.values(document.querySelectorAll('.course4th'));
 
     let allCourseFilterButton = document.getElementById('courseall')
     let firstCourseFilterButton = document.getElementById('course1st')
@@ -8,12 +13,70 @@ document.addEventListener('DOMContentLoaded', function () {
     let fourthCourseFilterButton = document.getElementById('course4th')
 
     let filterButtons = [allCourseFilterButton, firstCourseFilterButton, secondCourseFilterButton, thirdCourseFilterButton, fourthCourseFilterButton]
-    
-    filterButtons.forEach(el => {
-        el.addEventListener('click', function (e) {
-            console.log(`Вы кликнули на кнопку ${el.textContent}`)
+
+    if (window.location.href.split('/').at(-1) == 'courses.html') {
+        filterButtons.forEach(el => {
+            el.addEventListener('click', function (e) {
+                if (el == allCourseFilterButton) {
+                    allCourseCourses.forEach (course => {
+                        course.classList.remove("hidden")
+                    })
+                } else if (el == firstCourseFilterButton) {
+                    firstCourseCourses.forEach (course => {
+                        course.classList.remove("hidden")
+                    })
+                    secondCourseCourses.forEach (course => {
+                        course.classList.add("hidden")
+                    })
+                    thirdCourseCourses.forEach (course => {
+                        course.classList.add("hidden")
+                    })
+                    fourthCourseCourses.forEach (course => {
+                        course.classList.add("hidden")
+                    })
+                } else if (el == secondCourseFilterButton) {
+                    firstCourseCourses.forEach (course => {
+                        course.classList.add("hidden")
+                    })
+                    secondCourseCourses.forEach (course => {
+                        course.classList.remove("hidden")
+                    })
+                    thirdCourseCourses.forEach (course => {
+                        course.classList.add("hidden")
+                    })
+                    fourthCourseCourses.forEach (course => {
+                        course.classList.add("hidden")
+                    })
+                } else if (el == thirdCourseFilterButton) {
+                    firstCourseCourses.forEach (course => {
+                        course.classList.add("hidden")
+                    })
+                    secondCourseCourses.forEach (course => {
+                        course.classList.add("hidden")
+                    })
+                    thirdCourseCourses.forEach (course => {
+                        course.classList.remove("hidden")
+                    })
+                    fourthCourseCourses.forEach (course => {
+                        course.classList.add("hidden")
+                    })
+                } else if (el == fourthCourseFilterButton) {
+                    firstCourseCourses.forEach (course => {
+                        course.classList.add("hidden")
+                    })
+                    secondCourseCourses.forEach (course => {
+                        course.classList.add("hidden")
+                    })
+                    thirdCourseCourses.forEach (course => {
+                        course.classList.add("hidden")
+                    })
+                    fourthCourseCourses.forEach (course => {
+                        course.classList.remove("hidden")
+                    })
+                }
+            })
         })
-    })
+    }
 
     button.forEach(element => {
         element.addEventListener('click', function() {
