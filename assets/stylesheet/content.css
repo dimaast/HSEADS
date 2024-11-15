@@ -341,6 +341,7 @@ p {
     flex-direction: column;
     gap: var(--xxswrap);
     background: var(--gray10);
+    /* border: solid 2px var(--gray10); */
     border-radius: var(--sradius);
     padding: 10px 16px 16px;
 }
