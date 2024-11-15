@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let filterButtons = [allCourseFilterButton, firstCourseFilterButton, secondCourseFilterButton, thirdCourseFilterButton, fourthCourseFilterButton]
 
-    if (window.location.href.split('/').at(-1) == 'courses.html') {
+    if ((window.location.href.split('/').at(-1) == 'courses.html') || (window.location.href.split('/').at(-1) == 'deadlines.html')) {
         filterButtons.forEach(el => {
             el.addEventListener('click', function (e) {
                 if (el == allCourseFilterButton) {
